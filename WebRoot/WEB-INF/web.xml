@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Stock_MS</display-name>
+  
+  <!-- filter 过滤器  -->
+  	<filter>
+        <filter-name>afilter</filter-name>
+        <filter-class>stock.servlet.filter.AFilter</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>afilter</filter-name>
+    	<url-pattern>/mainface.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+    	<filter-name>afilter</filter-name>
+    	<url-pattern>/subjsp/*</url-pattern>
+    </filter-mapping>
+    
+  	<filter>
+        <filter-name>authfilter</filter-name>
+        <filter-class>stock.servlet.filter.AuthorityFilter</filter-class>
+    </filter>
+    <filter-mapping>
+    	<filter-name>authfilter</filter-name>
+    	<url-pattern>/subjsp/*</url-pattern>
+    </filter-mapping>
+ 
+  <!-- 普通servlet -->
+  <servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>stock.servlet.LogIn</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/servlet/LogIn</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>stock.servlet.LogOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/servlet/LogOut</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>product_info</servlet-name>
+  	<servlet-class>stock.servlet.ProductOPGridData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>product_info</servlet-name>
+  	<url-pattern>/servlet/ProductOPGridData</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>user_info</servlet-name>
+  	<servlet-class>stock.servlet.UserOPGridData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>user_info</servlet-name>
+  	<url-pattern>/servlet/UserOPGridData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>warehouse_info</servlet-name>
+  	<servlet-class>stock.servlet.WareHouseOPGridData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>warehouse_info</servlet-name>
+  	<url-pattern>/servlet/WareHouseOPGridData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>loadData</servlet-name>
+  	<servlet-class>stock.servlet.LoadData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loadData</servlet-name>
+  	<url-pattern>/servlet/LoadData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>instock</servlet-name>
+  	<servlet-class>stock.servlet.InStockOPData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>instock</servlet-name>
+  	<url-pattern>/servlet/InStockOPData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>outstock</servlet-name>
+  	<servlet-class>stock.servlet.OutStockOPData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>outstock</servlet-name>
+  	<url-pattern>/servlet/OutStockOPData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>insh</servlet-name>
+  	<servlet-class>stock.servlet.InStockReview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>insh</servlet-name>
+  	<url-pattern>/servlet/InStockReview</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>outsh</servlet-name>
+  	<servlet-class>stock.servlet.OutStockReview</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>outsh</servlet-name>
+  	<url-pattern>/servlet/OutStockReview</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>inventory</servlet-name>
+  	<servlet-class>stock.servlet.InventoryOPData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>inventory</servlet-name>
+  	<url-pattern>/servlet/InventoryOPData</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>print</servlet-name>
+  	<servlet-class>stock.servlet.PrintExcelFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>print</servlet-name>
+  	<url-pattern>/servlet/PrintExcelFile</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+ <class name="stock.vo.Inventory" table="inventories">
+ 
+  <composite-id>  
+      <key-property name="wid" column="wid" type="string"></key-property>
+      <key-property name="pid" column="pid" type="string"></key-property>
+      <key-property name="unitprice" column="unitprice" type="double"></key-property>  
+  </composite-id>  
+  
+  <property column="numbers" name="numbers" type="int"/>
+  
+ </class>
+ 
+</hibernate-mapping>

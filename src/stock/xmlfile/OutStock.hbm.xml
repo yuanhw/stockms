@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+ <class name="stock.vo.OutStock" table="outstock">
+ 
+  <id column="outid" name="outid" type="string">
+  	<generator class="assigned"/>
+  </id>
+  
+  <property column="whid" name="whid" not-null="true" type="string"/>
+  <property column="requestdate" name="requestdate" not-null="true" type="date"/>
+  <property column="state" name="state" not-null="true" type="string"/>
+  <property column="operator" name="operator" type="string"/>
+  
+  <set name="items" lazy="true" table="outstockitems">
+  	<key column="outid"/>
+  	<composite-element class="stock.vo.OutStockItem">
+  		<parent name="outstock"/>
+  		<many-to-one name="product" class="stock.vo.Product" column="pid" not-null="true"/>  
+  		<property name="unitprice" column="unitprice" type="double" not-null="true"/>
+  		<property name="numbers" column="numbers" type="int" not-null="true"/>
+  	</composite-element>
+  </set>
+  
+ </class>
+ 
+</hibernate-mapping>

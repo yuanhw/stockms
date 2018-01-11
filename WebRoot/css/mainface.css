@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+/*布局样式*/
+	#title{
+		text-align:center;
+		font-size:30px;
+		border-bottom:1px solid #abcdef;
+	}
+	#btdiv{
+		padding:3px;
+	}
+	#bt2{
+		color:red
+	}
+	#south p{
+		margin:5px;
+	}
+	#south p label{
+		color:red;
+	}
+/*垂直下拉菜单样式*/
+.menu_list{width:268px;margin:0 auto;}
+.menu_head{
+	height: 47px;
+	line-height: 47px;
+	padding-left: 38px;
+	font-size: 14px;
+	color: #525252;
+	cursor: pointer;
+	border-left: 1px solid #e1e1e1;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-top: 1px solid #F1F1F1;
+	position: relative;
+	margin: 0px;
+	font-weight: bold;
+	background: #f1f1f1 url(../image/up.png) center right no-repeat;
+}
+.menu_list .current{background:#f1f1f1 url(../image/down.png) center right no-repeat;}
+.menu_body{
+	line-height: 38px;
+	border-left: 1px solid #e1e1e1;
+	backguound: #fff;
+	border-right: 1px solid #e1e1e1;
+}
+.menu_body a{display:block;height:38px;line-height:38px;padding-left:38px;color:#777777;background:#fff;text-decoration:none;border-bottom:1px solid #e1e1e1;}
+.menu_body a:hover{text-decoration:none;}
+#uq{
+	font-weight:normal;
+	background:#fff;
+	line-height:inherit;
+	height:38px;
+}
+#sediv a{
+	color:rgb(210, 136, 21);
+	font-size:12px;
+	padding-left:78px;
+}
+#bt1,#bt2{
+	width:100px;
+	height:30px;
+}

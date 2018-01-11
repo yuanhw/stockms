@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+ <class name="stock.vo.Product" table="products">
+ 
+  <id column="pid" name="pid" type="string">
+  	<generator class="assigned"/>
+  </id>
+  
+  <property column="pname" name="pname" not-null="true" type="string"/>
+  <property column="unitprice" name="unitprice" not-null="true" type="double"/>
+  <property column="units" name="units" not-null="true" type="string"/>
+  <property column="ptype" name="ptype" type="string"/>
+  
+ </class>
+ 
+</hibernate-mapping>
